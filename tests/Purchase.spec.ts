@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { test } from "@playwright/test";
 
 import { LoginPage } from "../pages/LoginPage";
@@ -19,11 +18,7 @@ test("Purchase Product", async ({ page }) => {
 
     const email = process.env.TEST_EMAIL || loginData.email;
     const password = process.env.TEST_PASSWORD || loginData.password;
-   // const MAX_ATTEMPTS = parseInt(process.env.MAX_ATTEMPTS || '20');
-  //  const RETRY_DELAY_MS = parseInt(process.env.RETRY_DELAY_MS || '3000');
-
     async function runPurchaseFlow() {
-       // console.log(`Purchase attempt ${attempt}/${MAX_ATTEMPTS}`);
         await login.goto();
         await login.login(email, password);
         await page.waitForSelector('button:has-text("Cart")', { timeout: 10000 });
