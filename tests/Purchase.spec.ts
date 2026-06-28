@@ -16,8 +16,11 @@ test("Purchase Product", async ({ page }) => {
     const cart = new CartPage(page);
     const checkout = new CheckoutPage(page);
 
-    const email = process.env.TEST_EMAIL || loginData.email;
-    const password = process.env.TEST_PASSWORD || loginData.password;
+    //const email = process.env.TEST_EMAIL || loginData.email;
+    //const password = process.env.TEST_PASSWORD || loginData.password;
+
+    const email = loginData.email;
+    const password = loginData.password;
     async function runPurchaseFlow() {
         await login.goto();
         await login.login(email, password);

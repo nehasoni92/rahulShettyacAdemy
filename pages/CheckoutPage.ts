@@ -24,7 +24,7 @@ export class CheckoutPage
 
   const option = this.page.locator('.ta-results button, .ta-results span, .list-group-item')
     .filter({ hasText: new RegExp(`^\\s*${countryName}\\s*$`) })
-    .first();;
+    .first();
     
 
   await option.waitFor({ state: 'visible', timeout: 10000 });
